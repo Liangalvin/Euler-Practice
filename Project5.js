@@ -13,7 +13,7 @@ function divisible(num, div){
   }
 }
 
-function treeFind(num){
+function numTreeFind(num){
   var found = false, counter = 1;
   while(found == false){
     if(divisible(counter, num) == false){
@@ -27,4 +27,4 @@ function treeFind(num){
 
 
 //console.log(divisible(2520, 10))
-console.log(treeFind(20));
+console.log(numTreeFind(20));
