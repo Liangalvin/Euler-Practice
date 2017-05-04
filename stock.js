@@ -15,17 +15,34 @@
 
 var yesterdayPrices = [10, 7, 5, 8, 11, 9, 3,20,20,1]
 
-function getMaxProfit(px){
-  var ary = px, pxDiff = 0;
-  for(var i = 0; i < ary.length; i++){
-    for(var j = ary.indexOf(ary[i]); j < ary.length; j++){
-      // console.log(ary[i] + " " + ary[j]);
-      if(ary[i] - ary[j] > pxDiff){
-        pxDiff = ary[i]-ary[j];
-      }
+// function getMaxProfit(px){
+//   var ary = px, pxDiff = 0;
+//   for(var i = 0; i < ary.length; i++){
+//     for(var j = ary.indexOf(ary[i]); j < ary.length; j++){
+//       // console.log(ary[i] + " " + ary[j]);
+//       if(ary[i] - ary[j] > pxDiff){
+//         pxDiff = ary[i]-ary[j];
+//       }
+//     }
+//   }
+//   return pxDiff
+// }
+
+function getMaxProfit(pxs){
+  var min = pxs[0], max = 0, res;
+  for(var i = 0; i < pxs.length; i++){
+    //console.log(pxs[i])
+    if(pxs[i] < min){
+      //console.log(pxs[i], min)
+      min = pxs[i];
+    }
+    else if(pxs[i] > max){
+      //console.log(pxs[i], max)
+      max = pxs[i];
     }
   }
-  return pxDiff
+  res = max-min;
+  return res;
 }
 
 console.log(getMaxProfit(yesterdayPrices))
